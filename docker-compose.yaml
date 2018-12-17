@@ -1,0 +1,14 @@
+version: '3'
+services:
+  webapp:
+    build: .
+    command: npm start
+    volumes: 
+      # Share SMB Share with your docker instance
+    - /Volumes/v01:/Volumes/v01
+      # Define the path to your Google Application JSON Auth
+    ports:
+    - "5000:5000"
+    environment: 
+      # Add your env variables here
+    - GOOGLE_APPLICATION_CREDENTIALS=/usr/src/app/svrless.json
